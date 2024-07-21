@@ -22,7 +22,7 @@ player2_score.textContent = "0";
 
 document.querySelector(".btn--roll").disabled = false;
 
-setTimeout(function() { alert("How The Game Works: (1) To play the game, you click on roll the dice button which then provide you a random dice number ranging from one to six [1 - 6]. (2) Then You click on hold button to add your points which then gives access to the second player. (3) You can choose to avoid the hold button by continuously pressing the roll the dice button which accumulate all your points but access is given back to the player 2 when you get a one [1] on the dice. (4) Null point is given when the dice shows one [1] (5)First player to reach '10' wins."); }, 500);
+setTimeout(function() { alert("How The Game Works: (1) To play the game, you click on roll the dice button which then provide you a random dice number ranging from one to six [1 - 6]. (2) Then You click on hold button to add your points which then gives access to the second player. (3) You can choose to avoid the hold button by continuously pressing the roll the dice button which accumulate all your points but access is given back to the player 2 when you get a one [1] on the dice. (4) Null point is given when the dice shows one [1] (5)First player to reach '100' wins."); }, 500);
 
 //first game values and assets ends//
 
@@ -42,7 +42,7 @@ function rollDice(){
     
     if (playeractive){
     
-        if (document.getElementById(`score--${currentplayer}`).innerHTML >= 10){
+        if (document.getElementById(`score--${currentplayer}`).innerHTML >= 100){
             document.querySelector(`.player--${currentplayer}`).classList.add("player--winner"); 
             document.querySelector(`.player--${currentplayer}`).classList.remove("player--active");
             document.querySelector(".dice").classList.add("hidden");
@@ -91,7 +91,7 @@ function rollDice(){
    function holdNow(){
     if (playeractive)
 
-        if (document.getElementById(`score--${currentplayer}`).innerHTML >= 10){
+        if (document.getElementById(`score--${currentplayer}`).innerHTML >= 100){
             document.querySelector(".dice").classList.add("hidden");
             document.querySelector(`.player--${currentplayer}`).classList.add("player--winner"); 
             document.querySelector(`.player--${currentplayer}`).classList.remove("player--active");
