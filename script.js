@@ -49,7 +49,7 @@ function rollDice(){
             document.querySelector(".btn--roll").disabled = true;
             let player_name = document.getElementById(`name--${currentplayer}`).textContent;
             setTimeout(function() { alert(`Hurray!! ${player_name} wins`); }, 800);
-            //window.alert(`${player_name} wins`);
+            
 
             
         }
@@ -57,13 +57,13 @@ function rollDice(){
         
         //guessing Dice images counting from 0-5//  
         let guess = Math.floor(Math.random()* dice.length);
-            console.log(guess);
+            
         const final= dice[guess];
         
         let showcase= document.querySelector(".dice").src = "./image/"+ final;
         
         
-        console.log(showcase); 
+        
 
         // if (guess != 0){
         //     current+=guess+1;
@@ -73,10 +73,9 @@ function rollDice(){
             if (guess != 0){
             document.querySelector(".dice").classList.remove("hidden");
                 current = current + Number(guess)+1;
-                console.log(current);
+                
                 document.getElementById(`current--${currentplayer}`).innerHTML = current;
-                // document.getElementById("current--0")
-                // console.log(document.getElementById('current --${currentplayer}').innerHTML);
+                
             }
         else{
             document.querySelector(".dice").classList.remove("hidden");
