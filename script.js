@@ -96,15 +96,27 @@ function rollDice(){
             document.querySelector(`.player--${currentplayer}`).classList.add("player--winner"); 
             document.querySelector(`.player--${currentplayer}`).classList.remove("player--active");
             document.querySelector(".btn--roll").disabled = true;
+            let player_name = document.getElementById(`name--${currentplayer}`).textContent;
+            setTimeout(function() { alert(`Hurray!! ${player_name} wins`); }, 800);
         }
         else{
         document.getElementById(`score--${score}`).innerHTML = current + Number(document.getElementById(`score--${score}`).innerHTML);
-        
-            current = 0;
-            currentplayer = currentplayer === 1 ? 0 : 1;
-            score = score === 1 ? 0 : 1;
-            player1.classList.toggle("player--active");
-            player2.classList.toggle("player--active");
+
+          if(document.getElementById(`score--${score}`).innerHTML>=100){
+                document.querySelector(".dice").classList.add("hidden");
+                document.querySelector(`.player--${currentplayer}`).classList.add("player--winner"); 
+                document.querySelector(`.player--${currentplayer}`).classList.remove("player--active");
+                document.querySelector(".btn--roll").disabled = true;
+                let player_name = document.getElementById(`name--${currentplayer}`).textContent;
+                setTimeout(function() { alert(`Hurray!! ${player_name} wins`); }, 800);
+            }
+            else{
+                current = 0;
+                currentplayer = currentplayer === 1 ? 0 : 1;
+                score = score === 1 ? 0 : 1;
+                player1.classList.toggle("player--active");
+                player2.classList.toggle("player--active");
+            }
         }
     }
          
